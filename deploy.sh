@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Despliega la última versión de la rama main en el VPS.
-# Uso: sudo bash deploy.sh
+# Uso: bash deploy.sh   (no usar sudo: git, npm y la clave SSH son de tu usuario;
+#      sudo solo se pide para copiar a DEPLOY_DIR)
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -24,6 +25,6 @@ npm run build
 
 echo "==> Copiando dist/ a $DEPLOY_DIR"
 # --delete elimina de DEPLOY_DIR los ficheros que ya no existen en dist/
-rsync -a --delete "$APP_DIR/dist/" "$DEPLOY_DIR/"
+sudo rsync -a --delete "$APP_DIR/dist/" "$DEPLOY_DIR/"
 
 echo "==> Despliegue completado: $(git -C "$REPO_DIR" rev-parse --short HEAD)"
