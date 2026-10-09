@@ -1,13 +1,14 @@
 import { Link } from 'react-router'
+import './NotFound.css'
 
 function NotFound() {
 
   return (
-    <div>
-      <h2>404</h2>
-      <p>Esta no es la clase de ballet, vuelve a la página principal</p>
-      <Link to="/">Ir a la página principal</Link>
-    </div>
+    <section className="notfound">
+      <p className="notfound-code">404</p>
+      <p className="notfound-text">Esta no es la clase de ballet, vuelve a la página principal</p>
+      <Link to="/" className="btn btn-primary">Ir a la página principal</Link>
+    </section>
   )
 }
 

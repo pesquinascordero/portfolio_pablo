@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router'
-import './App.css'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import Cv from './pages/Cv'

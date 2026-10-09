@@ -1,58 +1,87 @@
+/* Estilos del layout: header, contenido y footer.
+   Usa los tokens definidos en src/index.css. */
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
+  background: rgba(7, 6, 13, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--neon-cyan);
+  box-shadow: 0 1px 12px rgba(5, 217, 232, 0.35);
 }
 
 .site-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  padding: 16px 20px;
+  gap: 4px;
+  padding: 14px 20px;
   flex-wrap: wrap;
 
   a {
+    position: relative;
     color: var(--text);
     text-decoration: none;
-    font-size: 16px;
-    padding: 8px 14px;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    font: 500 13px/1 var(--mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+    transition: color 0.2s, text-shadow 0.2s;
 
     &:hover {
       color: var(--text-h);
-      background: var(--social-bg);
+      text-shadow: var(--glow-cyan);
     }
 
     &:focus-visible {
-      outline: 2px solid var(--accent);
+      outline: 2px solid var(--neon-yellow);
       outline-offset: 2px;
     }
 
+    /* Línea neón inferior en el enlace activo */
+    &::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 4px;
+      height: 2px;
+      background: var(--neon-pink);
+      box-shadow: var(--glow-pink);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+    }
+
     &.active {
-      color: var(--accent);
-      background: var(--accent-bg);
-      border-color: var(--accent-border);
+      color: var(--neon-cyan);
+      text-shadow: var(--glow-cyan);
+
+      &::after {
+        transform: scaleX(1);
+      }
     }
   }
 }
 
 .site-main {
   flex-grow: 1;
-  padding: 48px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: min(960px, 100%);
+  margin: 0 auto;
+  padding: 56px 20px;
+  box-sizing: border-box;
 }
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--neon-pink);
   padding: 16px 20px;
-  font-size: 14px;
+  font: 13px/1.4 var(--mono);
+  letter-spacing: 0.05em;
   color: var(--text);
+  text-align: center;
+  box-shadow: 0 -1px 12px rgba(255, 42, 109, 0.25);
+
+  p {
+    margin: 0;
+  }
 }

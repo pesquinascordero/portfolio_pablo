@@ -1,0 +1,40 @@
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  a {
+    font-family: var(--mono);
+    font-size: 15px;
+    color: var(--text-h);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+
+    &:hover {
+      color: var(--neon-pink);
+      text-shadow: var(--glow-pink);
+    }
+  }
+}
+
+.contact-label {
+  font: 500 12px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neon-cyan);
+}
