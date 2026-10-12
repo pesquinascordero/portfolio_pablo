@@ -27,4 +27,9 @@ echo "==> Copiando dist/ a $DEPLOY_DIR"
 # --delete elimina de DEPLOY_DIR los ficheros que ya no existen en dist/
 sudo rsync -a --delete "$APP_DIR/dist/" "$DEPLOY_DIR/"
 
+echo "==> Actualizando la API y reiniciando el servicio"
+cd "$REPO_DIR/api"
+npm ci --omit=dev
+sudo systemctl restart portfolio-api
+
 echo "==> Despliegue completado: $(git -C "$REPO_DIR" rev-parse --short HEAD)"
