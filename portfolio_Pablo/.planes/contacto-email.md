@@ -56,7 +56,7 @@ Lenguaje según la decisión de la fase 0.
 4. Respuestas claras: 200 si se envía, 400 si la validación falla, 429 si hay demasiadas peticiones, 500 si SMTP falla (sin revelar detalles).
 5. Tests del endpoint con la cuenta de envío **simulada** (sin mandar correos reales en los tests).
 
-**Estado:** código y tests completados en `api/` (7 tests en verde, con mailer simulado). Pendiente la prueba con correo real: crear `api/.env` a partir de `api/.env.example`, poner la contraseña de la cuenta de envío, arrancar con `npm start` y lanzar un `curl` de prueba.
+**Estado: completada.** Código y tests en `api/` (7 tests en verde). Probado en el VPS: `curl` directo a la API y `curl` público a través de Caddy responden `{"ok":true}`, y llegaron ambos correos.
 
 **Comprobación:** los tests pasan y, con una petición manual con `curl`, llega un correo real a tu buzón.
 
