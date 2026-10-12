@@ -1,0 +1,18 @@
+[Unit]
+Description=Portfolio API (formulario de contacto)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Carpeta de la API en el VPS (la ruta del repo clonado)
+WorkingDirectory=/root/portfolio/portfolio_pablo/api
+# Credenciales: el fichero que creamos en el VPS
+EnvironmentFile=/etc/portfolio-api.env
+# Ruta absoluta de node en el VPS: sustituir por el resultado de `which node`
+ExecStart=/usr/bin/node src/server.js
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

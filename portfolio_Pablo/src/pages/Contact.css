@@ -4,6 +4,75 @@
   gap: 8px;
 }
 
+.contact-form {
+  position: relative;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font: 500 12px/1 var(--mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neon-cyan);
+  }
+
+  input,
+  textarea {
+    font: 16px/1.5 var(--sans);
+    color: var(--text-h);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 10px 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--neon-cyan);
+      box-shadow: var(--glow-cyan);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+/* Oculto visualmente y fuera del flujo de tabulación */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-error {
+  font: 13px/1.4 var(--mono);
+  color: var(--neon-pink);
+  margin: 0;
+}
+
+.form-success {
+  font: 14px/1.4 var(--mono);
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-cyan);
+  margin: 0;
+}
+
+.contact-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
 .contact-list {
   list-style: none;
   padding: 0;
