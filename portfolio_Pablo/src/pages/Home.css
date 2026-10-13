@@ -68,21 +68,21 @@
 }
 
 .home-hero h1 {
-  font-size: clamp(2.4rem, 5.5vw, 4rem);
-  margin: 40px 0 16px;
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin: 20px 0 12px;
 }
 
 .home-hero-definition {
-  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   line-height: 1.5;
   color: var(--neon-cyan);
   margin: 0;
 }
 
 .home-lead {
-  margin-top: 32px;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  line-height: 1.75;
+  margin-top: 20px;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.65;
   max-width: 720px;
   color: var(--text);
 }
@@ -92,13 +92,13 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 /* Foto sin fondo en blanco y negro, integrada en el fondo oscuro de la página.
    El degradado inferior evita un corte duro en los brazos. */
 .home-photo {
-  width: 440px;
+  width: clamp(220px, 26vw, 340px);
   max-width: 100%;
   height: auto;
   filter: grayscale(1) contrast(1.1) brightness(0.95);
