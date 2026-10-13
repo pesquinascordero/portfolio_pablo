@@ -1,4 +1,5 @@
 export interface Project {
+  slug: string
   title: string
   type: 'Académico' | 'Personal' | 'UAH'
   description: string
@@ -7,6 +8,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: 'gestion-de-tareas',
     title: 'Aplicación web de gestión de tareas',
     type: 'Académico',
     description:
@@ -14,13 +16,15 @@ export const projects: Project[] = [
     tags: ['Java', 'Servlets', 'GlassFish', 'JavaScript'],
   },
   {
+    slug: 'bases-de-datos',
     title: 'Diseño y optimización de bases de datos',
     type: 'Académico',
     description:
-      'Modelado del esquema relacional, definición de tablas e índices y optimización de consultas SQL, reduciendo el tiempo de respuesta de [X ms] a [X ms].',
+      'Modelado del esquema relacional, definición de tablas e índices y optimización de consultas SQL.',
     tags: ['PostgreSQL', 'MySQL', 'SQL'],
   },
   {
+    slug: 'escaner-iot',
     title: 'Escáner de exposición IoT',
     type: 'Personal',
     description:
@@ -28,6 +32,7 @@ export const projects: Project[] = [
     tags: ['Python', 'Shodan API', 'Telegram Bot API', 'ML'],
   },
   {
+    slug: 'rastreador-wallets',
     title: 'Rastreador forense de wallets blockchain',
     type: 'Personal',
     description:
@@ -35,6 +40,7 @@ export const projects: Project[] = [
     tags: ['Python', 'APIs on-chain', 'Telegram Bot API'],
   },
   {
+    slug: 'crawler-dark-web',
     title: 'Crawler de Dark Web con alertas',
     type: 'Personal',
     description:
@@ -42,10 +48,11 @@ export const projects: Project[] = [
     tags: ['Python', 'Tor', 'Regex', 'Telegram Bot API'],
   },
   {
+    slug: 'tfg-genomica',
     title: 'TFG: Machine Learning para identificar la vía ALT en datos genómicos tumorales',
     type: 'UAH',
     description:
-      'Modelos de clasificación en Python (pandas, scikit-learn) sobre datos genómicos de tumores para la detección precoz del cáncer, alcanzando [métrica: AUC/F1 = X].',
+      'Modelos de clasificación en Python (pandas, scikit-learn) sobre datos genómicos de tumores para la detección precoz del cáncer.',
     tags: ['Python', 'pandas', 'scikit-learn', 'ML'],
   },
 ]

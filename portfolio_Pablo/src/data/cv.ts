@@ -36,17 +36,17 @@ export const skills = [
 
 export const experience = [
   {
-    role: '[Puesto exacto, p. ej. Ingeniero de Software en Prácticas]',
+    role: 'Desarrollador en prácticas',
     company: 'Acciona Tecnología y Servicios',
     type: 'Prácticas',
     period: 'Sep 2025 – Mar 2026',
     location: 'Madrid',
     bullets: [
-      'Desarrollé en Java [X] escenarios de prueba automatizados E2E con Appium y Cucumber (BDD) para aplicaciones iOS/Android, ejecutados en BrowserStack.',
-      'Integré la suite de pruebas en pipelines CI/CD de Jenkins para su ejecución automática en cada build, reduciendo la regresión manual de [X horas] a [X minutos].',
-      'Monitoricé el rendimiento y la disponibilidad de aplicaciones en AWS con Dynatrace, detectando [X incidencias / degradaciones de rendimiento] y configurando [alertas / dashboards].',
-      'Gestioné el empaquetado y la publicación de [X] versiones de apps móviles en App Store y Applivery, con control de versiones en Git/GitLab y seguimiento en Jira.',
-      'Desarrollé funcionalidades en React e Ionic para [qué app o funcionalidad].',
+      'Desarrollé en Java escenarios de prueba automatizados E2E con Appium y Cucumber (BDD) para aplicaciones iOS/Android, ejecutados en BrowserStack.',
+      'Integré la suite de pruebas en pipelines CI/CD de Jenkins para su ejecución automática en cada build, reduciendo la regresión manual.',
+      'Monitoricé el rendimiento y la disponibilidad de aplicaciones desplegadas en AWS con Dynatrace.',
+      'Gestioné el empaquetado y la publicación de versiones de apps móviles en App Store y Applivery, con control de versiones en Git/GitLab y seguimiento en Jira.',
+      'Desarrollé funcionalidades en React e Ionic.',
     ],
   },
 ]
@@ -56,11 +56,11 @@ export const education = [
     title: 'Grado en Ingeniería en Sistemas de Información',
     institution: 'Universidad de Alcalá (UAH)',
     period: '2021 – 2026',
-    detail: '[Graduado en junio de 2026 / TFG pendiente de defensa] · [Nota media: X]',
+    detail: 'Graduado en 2026.',
   },
 ]
 
 export const languages = [
   { name: 'Español', level: 'Nativo' },
-  { name: 'Inglés', level: 'B2 [certificado, si lo tienes]' },
+  { name: 'Inglés', level: 'B2' },
 ]

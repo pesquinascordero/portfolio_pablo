@@ -5,8 +5,43 @@
 }
 
 .cv-header {
-  border-left: 2px solid var(--neon-pink);
-  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 8px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.cv-summary {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 8px 0 0;
+}
+
+.cv-download {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.cv-contact {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  font: 15px/1.4 var(--mono);
+
+  a {
+    color: var(--neon-cyan);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+  }
 }
 
 .cv-role {
@@ -65,33 +100,42 @@
   }
 }
 
-.cv-skills {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+/* Habilidades: tarjetas en rejilla, con las tecnologías como etiquetas */
+.cv-skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.cv-skill-group {
-  display: grid;
-  grid-template-columns: minmax(140px, 200px) 1fr;
-  gap: 16px;
-
-  dt {
-    font: 500 13px/1.6 var(--mono);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--neon-cyan);
+.cv-skill-card {
+  h4 {
+    font-family: var(--heading);
+    font-size: 1rem;
+    color: var(--text-h);
+    margin: 0 0 16px;
   }
+}
 
-  dd {
-    margin: 0;
-  }
+.cv-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cv-tag {
+  font: 13px/1 var(--mono);
+  color: var(--text-h);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 12px;
 }
 
 @media (max-width: 640px) {
-  .cv-skill-group {
+  .cv-skill-grid {
     grid-template-columns: 1fr;
-    gap: 4px;
   }
 }

@@ -3,6 +3,7 @@ import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import Cv from './pages/Cv'
 import Projects from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/cv" element={<Cv />} />
         <Route path="/proyectos" element={<Projects />} />
+        <Route path="/proyectos/:slug" element={<ProjectDetail />} />
         <Route path="/contacto" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Route>
