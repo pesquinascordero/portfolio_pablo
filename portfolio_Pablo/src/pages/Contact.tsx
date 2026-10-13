@@ -5,8 +5,8 @@ import './Contact.css'
 const links = [
   { label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
   { label: 'Teléfono', value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}` },
-  { label: 'LinkedIn', value: 'linkedin.com/in/pablo-esquinas-cordero', href: profile.linkedin },
-  { label: 'GitHub', value: 'github.com/pesquinascordero', href: profile.github },
+  { label: 'LinkedIn', value: 'LinkedIn', href: profile.linkedin },
+  { label: 'GitHub', value: 'GitHub', href: profile.github },
 ]
 
 type FormValues = {
@@ -72,9 +72,8 @@ function Contact() {
 
   return (
     <section className="contact-page">
-      <p className="eyebrow">// contacto</p>
-      <h2>Hablemos</h2>
-      <p>Si buscas un desarrollador backend, escríbeme por el canal que prefieras.</p>
+      <h2>Contacto</h2>
+      <p>¿Hablamos? Escríbeme o encuéntrame en las redes.</p>
 
       <form className="contact-form card" onSubmit={handleSubmit} noValidate>
         <div className="form-field">
@@ -119,8 +118,7 @@ function Contact() {
 
       <ul className="contact-list">
         {links.map((link) => (
-          <li key={link.label} className="card contact-item">
-            <span className="contact-label">{link.label}</span>
+          <li key={link.label} className="contact-item">
             <a href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
               {link.value}
             </a>

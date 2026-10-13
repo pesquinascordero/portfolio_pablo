@@ -11,33 +11,64 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
+/* Tarjeta de proyecto: portada, texto y tecnologías */
 .project {
   display: flex;
   flex-direction: column;
   height: 100%;
-  box-sizing: border-box;
+  padding: 0;
+  overflow: hidden;
+
+  &:hover h3 {
+    color: var(--neon-cyan);
+  }
+}
+
+/* Portada provisional hasta tener imágenes de cada proyecto */
+.project-cover {
+  height: 140px;
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  background:
+    linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(129, 140, 248, 0.05)),
+    var(--surface-2);
+  border-bottom: 1px solid var(--border);
+
+  span {
+    font: 500 11px/1 var(--mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neon-yellow);
+    border: 1px solid var(--neon-yellow);
+    padding: 5px 8px;
+    background: var(--bg);
+  }
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 20px;
 
   h3 {
     font-size: 1rem;
-    margin: 8px 0 12px;
+    margin: 0 0 12px;
+    transition: color 0.2s;
   }
 
   p {
     font-size: 15px;
     flex-grow: 1;
   }
-}
-
-.project-type {
-  align-self: flex-start;
-  font: 500 11px/1 var(--mono);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--neon-yellow);
-  border: 1px solid var(--neon-yellow);
-  padding: 4px 8px;
 }
 
 .project-tags {
@@ -51,7 +82,43 @@
   li {
     font: 12px/1 var(--mono);
     color: var(--neon-cyan);
-    background: rgba(5, 217, 232, 0.08);
+    background: rgba(99, 102, 241, 0.12);
     padding: 6px 8px;
   }
+}
+
+/* ---------- Vista de detalle ---------- */
+.project-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 760px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.project-detail-back {
+  font: 14px/1 var(--mono);
+  color: var(--text);
+  text-decoration: none;
+  align-self: flex-start;
+
+  &:hover {
+    color: var(--neon-cyan);
+  }
+}
+
+.project-detail-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.project-detail-soon {
+  border: 1px dashed var(--border);
+  padding: 24px;
+  color: var(--text);
+  margin: 0;
 }

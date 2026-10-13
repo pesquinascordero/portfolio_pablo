@@ -1,28 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ==========================================================================
    Tokens globales. Las páginas heredan estas variables desde :root,
    por eso sus CSS propios no necesitan importar este archivo.
    ========================================================================== */
 :root {
-  --bg: #07060d;
-  --surface: #0f0d1a;
-  --surface-2: #161329;
-  --text: #b8c2d6;
-  --text-h: #f5f7ff;
+  --bg: #0c0d15;
+  --surface: #161a2c;
+  --surface-2: #1d2238;
+  --text: #aab1cc;
+  --text-h: #eef0ff;
 
-  --neon-cyan: #05d9e8;
-  --neon-pink: #ff2a6d;
-  --neon-violet: #b26bff;
-  --neon-yellow: #fff95d;
+  /* Nombres heredados de la paleta neón: ahora son índigo.
+     Renombrarlos a --accent y --accent-2 queda pendiente. */
+  --neon-cyan: #6366f1;
+  --neon-pink: #818cf8;
+  --neon-violet: #a5b4fc;
+  --neon-yellow: #c7d2fe;
 
-  --border: rgba(5, 217, 232, 0.25);
-  --glow-cyan: 0 0 8px rgba(5, 217, 232, 0.6), 0 0 24px rgba(5, 217, 232, 0.25);
-  --glow-pink: 0 0 8px rgba(255, 42, 109, 0.6), 0 0 24px rgba(255, 42, 109, 0.25);
+  --border: rgba(99, 102, 241, 0.25);
+  --glow-cyan: 0 0 8px rgba(99, 102, 241, 0.5), 0 0 24px rgba(99, 102, 241, 0.2);
+  --glow-pink: 0 0 8px rgba(129, 140, 248, 0.5), 0 0 24px rgba(129, 140, 248, 0.2);
 
-  --heading: 'Orbitron', system-ui, sans-serif;
+  --heading: 'Space Grotesk', system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
 
   color-scheme: dark;
   color: var(--text);
@@ -36,10 +38,8 @@ body {
   margin: 0;
   min-height: 100svh;
   background:
-    radial-gradient(circle at 15% 0%, rgba(255, 42, 109, 0.14), transparent 40%),
-    radial-gradient(circle at 85% 100%, rgba(5, 217, 232, 0.12), transparent 40%),
-    linear-gradient(rgba(5, 217, 232, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
-    linear-gradient(90deg, rgba(5, 217, 232, 0.05) 1px, transparent 1px) 0 0 / 40px 40px,
+    radial-gradient(circle at 15% 0%, rgba(129, 140, 248, 0.12), transparent 40%),
+    radial-gradient(circle at 85% 100%, rgba(99, 102, 241, 0.14), transparent 40%),
     var(--bg);
   background-attachment: fixed;
 }
@@ -70,13 +70,14 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  text-shadow: var(--glow-cyan);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: 1.5rem;
-  text-shadow: 0 0 6px rgba(5, 217, 232, 0.5);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: -0.01em;
 }
 
 h3 {
@@ -116,11 +117,11 @@ code {
   background: transparent;
   border: 1px solid var(--neon-cyan);
   border-radius: 2px;
-  box-shadow: 0 0 10px rgba(5, 217, 232, 0.2);
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2);
   transition: box-shadow 0.2s, background 0.2s, color 0.2s;
 
   &:hover {
-    background: rgba(5, 217, 232, 0.1);
+    background: rgba(99, 102, 241, 0.12);
     box-shadow: var(--glow-cyan);
   }
 
@@ -132,13 +133,13 @@ code {
 
 .btn-primary {
   color: var(--text-h);
-  background: var(--neon-pink);
-  border-color: var(--neon-pink);
-  box-shadow: var(--glow-pink);
+  background: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  box-shadow: var(--glow-cyan);
 
   &:hover {
-    background: #ff4b84;
-    box-shadow: 0 0 12px rgba(255, 42, 109, 0.8), 0 0 32px rgba(255, 42, 109, 0.4);
+    background: var(--neon-pink);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.7), 0 0 32px rgba(99, 102, 241, 0.35);
   }
 }
 
