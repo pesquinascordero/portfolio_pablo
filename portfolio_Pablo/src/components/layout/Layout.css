@@ -83,7 +83,7 @@
   flex-grow: 1;
   width: min(960px, 100%);
   margin: 0 auto;
-  padding: 56px 20px;
+  padding: 32px 20px;
   box-sizing: border-box;
 }
 
